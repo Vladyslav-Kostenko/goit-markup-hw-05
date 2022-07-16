@@ -383,7 +383,25 @@
                         </a>
                     </li>
                 </ul>
-            </div>            
+            </div>
+            <div class="subscription">
+                <h3 class="header">Подпишитесь на рассылку</h3>
+                <div class="subscription-field">
+                    <label>                        
+                        <input type="email" 
+                        class="subscription-input" 
+                        name="subscription-email"                         
+                        placeholder=" ">
+                        <span class="subscription-label">E-mail</span>
+                    </label>
+                    <button class="subscription-button" type="submit">
+                        <p class="text">Подписаться</p>
+                        <svg class="icon">
+                            <use href="./images/svg/icons.svg#icon-send"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>        
     </footer>
     <div class="backdrop is-hidden" data-modal>
@@ -393,6 +411,59 @@
                     <use href="./images/svg/icons.svg#icon-close-modal"></use>
                 </svg>
             </button>
+            <form action="form" class="service-form">
+                <h4 class="header">Оставьте свои данные, мы вам перезвоним</h4>
+                <ul class="client-info">
+                    <li class="client-field">
+                        <label class="client-label">
+                            <span class="client-text">Имя</span>
+                            <div class="client-container">
+                                <input type="text" class="client-input" name="client-name">
+                                <svg class="icon" aria-hidden="true">
+                                    <use href="./images/svg/icons.svg#icon-modal-person"></use>
+                                </svg>
+                            </div>                            
+                        </label>                        
+                    </li>
+                    <li class="client-field">
+                        <label class="client-label">
+                            <span class="client-text">Телефон</span>
+                            <div class="client-container">
+                                <input type="tel" class="client-input" name="client-tel">
+                                <svg class="icon" aria-hidden="true">
+                                    <use href="./images/svg/icons.svg#icon-modal-phone"></use>
+                                </svg>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="client-field">
+                        <label class="client-label">
+                            <span class="client-text">Почта</span>
+                            <div class="client-container">
+                                <input type="email" class="client-input" name="client-mail">
+                                <svg class="icon" aria-hidden="true">
+                                    <use href="./images/svg/icons.svg#icon-modal-email"></use>
+                                </svg>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="client-field">
+                        <label class="client-label">
+                            <span class="client-text">Комментарий</span>
+                            <textarea name="client-comment" rows="7" placeholder="Введите текст"></textarea>
+                        </label>
+                    </li>
+                </ul>                
+                <div class="agreement-commit">
+                    <label class="agreement-label">
+                        <input type="checkbox" class="agreement-checkbox" name="agreement">
+                        <span class="icon"></span>
+                        <span>Соглашаюсь с рассылкой и принимаю&#160;</span>
+                        <a class="agreement-link" href="#">Условия договора</a>
+                    </label>
+                </div>
+                <button class="button" type="submit">Отправить</button>
+            </form>
         </div>
     </div>
     <script src="./js/modal.js"></script>

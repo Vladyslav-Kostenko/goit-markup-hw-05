@@ -468,8 +468,8 @@ footer .header {
 
 .clients-list .link:hover,
 .clients-list .link:focus {
-    border: 1px solid #2196F3;
-    color: #2196F3;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
 }
 
 .clients-list .icon {
@@ -526,7 +526,7 @@ footer .adress {
     font-style: normal;
 }
 
-.footer-links .header {
+footer .header {
     margin-bottom: 20px;
 }
 
@@ -548,6 +548,73 @@ footer .adress {
     color: var(--secondary-text-color);
 }
 
+.subscription:focus-within .subscription-label,
+.subscription-input:not(:placeholder-shown) + .subscription-label{
+    opacity: 0;
+}
+
+.subscription-field {
+    position: relative;
+    display: flex;
+}
+
+.subscription-label {
+    position: absolute;
+
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.subscription-input {
+    margin-right: 12px;
+    padding: 15px 16px;
+    width: 358px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: var(--secondary-page-color);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.subscription-email:focus {
+    color: var(--secondary-text-color)
+}
+
+.subscription-button {
+    display: flex;
+    align-items: center;
+
+    width: 200px;
+    height: 50px;
+    padding: 10px 30px;
+
+    cursor: pointer;
+
+    background-color: var(--accent-color);
+    color: var(--secondary-text-color);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.subscription .text {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    margin-right: 10px;
+}
+
+.subscription .icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--primary-page-color);
+}
+
+/* modal window */
 .backdrop {
     position: fixed;
     top: 0;
@@ -593,13 +660,170 @@ footer .adress {
     cursor: pointer;
 
     border-radius: 50%;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: var(--primary-page-color);
+    color: #000;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal .icon {
     width: 18px;
     height: 18px;
+    fill: currentColor;
+}
+
+.modal .close-button:hover,
+.modal .close-button:focus {
+    color: var(--accent-color);
+}
+
+.modal form {
+    padding: 40px;
+
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+}
+
+.modal .header {
+    text-align: center;
+    margin-bottom: 12px;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+
+    color: var(--primary-text-color);
+}
+
+.client-field {
+    margin-bottom: 10px;
+}
+
+.client-field > .client-label {
+    display: flex;
+    flex-direction: column;
+
+    color: var(--additional-text-color);
+    
+    font-size: 12px;
+    line-height: 1.17;
+    margin-bottom: 20px;
+}
+
+.client-field .client-text {
+    margin-bottom: 4px;
+}
+
+.client-field .client-container {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    color: var(--primary-text-color);
+}
+
+.client-field .client-input {
+    margin: 0;
+    padding: 11px 42px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: transparent;
+}
+
+.client-field .client-input:focus,
+.client-field textarea:focus{
+    border: 1px solid var(--accent-color);
+}
+
+.client-field .icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    fill: currentColor;
+}
+
+.client-input:focus-within + .icon {
+    color: var(--accent-color);
+}
+
+.client-field  textarea{
+    resize: none;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding: 12px 16px;
+
+    outline: transparent;
+}
+
+.client-field textarea::placeholder{
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.agreement-commit {
+    margin-bottom: 30px;
+}
+
+.agreement-commit .agreement-checkbox {
+    margin-right: 8px;
+}
+
+.agreement-checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.agreement-label .icon {
+    width: 16px;
+    height: 15px;
+    margin-right: 8px;
+
+    background-image: url(../images/svg/checkbox-unchecked.svg);
+}
+
+.agreement-checkbox:checked + .icon {
+    background-image: url(../images/svg/checkbox-checked.svg);
+}
+
+.agreement-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: rgba(117, 117, 117, 1);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.agreement-link {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.service-form .button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 50px;
+
+    cursor: pointer;
+
+    background-color: var(--accent-color);
+    color: var(--secondary-text-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: none;
+    
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    line-height: 1.65;
 }
 
 /* porfolio page */
